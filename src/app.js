@@ -2,7 +2,7 @@ import express from 'express'
 import cors from 'cors'
 import dotenv from 'dotenv'
 import { dbConnect } from './config/mongodb.js'
-import { recipeRoute } from './routes/index.js'
+import { recipeRoute, movieRoute } from './routes/index.js'
 
 
 // Cargamos las variables de entorno
@@ -20,6 +20,7 @@ app.use(express.json())
 
 // Rutas de recetas
 app.use('/api', recipeRoute)
+app.use('/api', movieRoute)
 
 
 const PORT = process.env.PORT || 3000
